@@ -210,3 +210,17 @@ h3{font-family:var(--sans);font-weight:600;font-size:22px;letter-spacing:-.015em
 .chat-form input:focus{outline:none;border-color:var(--blue)}
 .send{flex:none;width:46px;height:46px;border-radius:50%;border:0;background:var(--blue);color:#fff;font-size:18px;cursor:pointer}
 .send:disabled{opacity:.5;cursor:default}
+
+/* hero: títol + foto a l'esquerra, mateixa alçada que el xat */
+.hero{align-items:stretch;padding-top:clamp(28px,5vh,64px);padding-bottom:40px}
+.hero-intro{display:flex;flex-direction:column;min-width:0}
+.hero .hero-intro h1{font-size:clamp(48px,6.2vw,92px)}
+.hero-intro .lede{margin-top:16px}
+.hero .hero-photo{flex:1;display:flex;flex-direction:column;min-height:0;width:100%;margin:26px 0 0;justify-self:auto;order:0}
+.hero-photo .photo-card{position:relative;flex:1;min-height:220px;aspect-ratio:auto;transform:none}
+.hero-photo .photo-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.hero-photo .photo-cap{margin-top:12px}
+@media (max-width:920px){
+  .hero .hero-photo{flex:none}
+  .hero-photo .photo-card{flex:none;height:min(60vw,280px)}
+}
