@@ -25,10 +25,10 @@ Projectes (id entre claudàtors):
 [portfoli] Aquest portfoli: fet a mà (HTML, CSS, JavaScript) amb aquest xat connectat a un LLM de Groq mitjançant una funció serverless de Netlify. També té una versió 3D anterior feta amb Three.js i Vite.
 [misgastos] Mis Gastos: app mòbil amb React Native, Expo Router i TypeScript; moviments per categories, balanç, gràfics de barres i circulars, registre de jornades (hores, preu/hora, total), dades a AsyncStorage, importació/exportació d'arxius.
 [efimera] La Efímera: web de la pizzeria amb Laravel/PHP/MySQL, carta, take away, multiidioma i panell de comandes amb filtres.
-[nf] NF: botiga online WordPress/WooCommerce de neceseres fets a mà.
-[fashion] Fashion Week: web editorial (HTML, CSS).
+[nf] NF: botiga online WordPress/WooCommerce de neceseres fets a mà, amb treball de SEO (títols, meta descripcions, textos, imatges).
+[fashion] Fashion Week: web editorial (HTML, CSS, JavaScript).
 [makeup] MakeupCatalog: app mòbil per catalogar maquillatge per categories, amb login i multiidioma.
-[strawhop] StrawHop: videojoc de plataformes 2D pixel art.
+[strawhop] StrawHop: videojoc de plataformes 2D fet amb Unity (C#), estètica pixel art.
 [escacs] Escacs: joc d'escacs d'escriptori amb C++ i Qt.
 [barcos] Vaixells 3D: videojoc multijugador en 3D fet amb Unity.
 Normes:
