@@ -82,7 +82,7 @@ const PROJECTS = [
     id:'fashion', cat:'webs',
     media:{type:'video', src:'assets/video/fashion.mp4', poster:'assets/img/poster-fashion.jpg'},
     gallery:['assets/img/fashion.webp'],
-    tags:['HTML','CSS','JavaScript','Disseny web'],
+    tags:['HTML','CSS','JavaScript','UI i UX'],
     links:[{label:'GitHub', href:GH+'/fashion_week_web'}],
     t:{
       ca:{title:'Fashion Week', one:'Web editorial sobre tendències i moments icònics de la Fashion Week.', desc:'Una web editorial sobre la Fashion Week: història, ciutats clau, tendències, marques i outfits, amb un disseny visual i cercador.', did:['Disseny i maquetació de la web.','Diverses seccions de contingut.','Cercador i navegació.']},
@@ -94,7 +94,7 @@ const PROJECTS = [
     id:'makeup', cat:'apps',
     media:{type:'video', src:'assets/video/makeup.mp4', poster:'assets/img/poster-makeup.jpg', phone:true},
     gallery:['assets/img/makeup.webp'],
-    tags:['App mòbil','Login','Multiidioma'],
+    tags:['Android Studio','Java','Kotlin','Login','Multiidioma'],
     links:[],
     t:{
       ca:{title:'MakeupCatalog', one:'App mòbil per catalogar productes de maquillatge per categories.', desc:'Una app per organitzar els teus productes de maquillatge: rostre, ulls, llavis i accessoris, amb inici de sessió i diversos idiomes.', did:['Disseny de la interfície.','Categories i fitxes de producte.','Afegir productes amb marca, to i preu.']},
@@ -106,7 +106,7 @@ const PROJECTS = [
     id:'strawhop', cat:'jocs',
     media:{type:'video', src:'assets/video/strawhop.mp4', poster:'assets/img/poster-strawhop.jpg'},
     gallery:['assets/img/strawhop.webp'],
-    tags:['Unity','C#','Videojoc 2D','Pixel art'],
+    tags:['Unity 2D','C#','Pixel art'],
     links:[],
     t:{
       ca:{title:'StrawHop', one:'Videojoc de plataformes 2D fet amb Unity, amb estètica pixel art.', desc:'Un joc de plataformes 2D fet amb Unity: salta, esquiva obstacles i recull maduixes per sumar punts.', did:['Mecàniques de salt i col·lisions.','Puntuació, vides i obstacles.','Menú i estètica pixel art.']},
