@@ -70,19 +70,19 @@ const PROJECTS = [
     id:'nf', featured:true, cat:'webs',
     media:{type:'video', src:'assets/video/nf.mp4', poster:'assets/img/poster-nf.jpg'},
     gallery:['assets/img/nf.webp'],
-    tags:['WordPress','WooCommerce','E-commerce'],
+    tags:['WordPress','WooCommerce','SEO','E-commerce'],
     links:[],
     t:{
-      ca:{title:'NF', one:'Botiga online de neceseres personalitzats fets a mà.', desc:'Una botiga online amb WordPress i WooCommerce per vendre neceseres personalitzats i sostenibles fets a mà.', did:['Disseny de la botiga i de la identitat visual.','Catàleg de productes i carret amb WooCommerce.','Seccions de més venuts i novetats.']},
-      es:{title:'NF', one:'Tienda online de neceseres personalizados hechos a mano.', desc:'Una tienda online con WordPress y WooCommerce para vender neceseres personalizados y sostenibles hechos a mano.', did:['Diseño de la tienda y de la identidad visual.','Catálogo de productos y carrito con WooCommerce.','Secciones de más vendidos y novedades.']},
-      en:{title:'NF', one:'Online shop for handmade personalised toiletry bags.', desc:'An online shop built with WordPress and WooCommerce to sell handmade, sustainable, personalised toiletry bags.', did:['Shop and visual identity design.','Product catalogue and cart with WooCommerce.','Best-sellers and new-arrivals sections.']}
+      ca:{title:'NF', one:'Botiga online de neceseres personalitzats fets a mà.', desc:'Una botiga online amb WordPress i WooCommerce, treballada també a nivell de SEO, per vendre neceseres personalitzats i sostenibles fets a mà.', did:['Disseny de la botiga i de la identitat visual.','Catàleg de productes i carret amb WooCommerce.','Seccions de més venuts i novetats.','Posicionament SEO: títols, meta descripcions, textos i imatges optimitzats.']},
+      es:{title:'NF', one:'Tienda online de neceseres personalizados hechos a mano.', desc:'Una tienda online con WordPress y WooCommerce, trabajada también a nivel de SEO, para vender neceseres personalizados y sostenibles hechos a mano.', did:['Diseño de la tienda y de la identidad visual.','Catálogo de productos y carrito con WooCommerce.','Secciones de más vendidos y novedades.','Posicionamiento SEO: títulos, meta descripciones, textos e imágenes optimizados.']},
+      en:{title:'NF', one:'Online shop for handmade personalised toiletry bags.', desc:'An SEO-optimised online shop built with WordPress and WooCommerce to sell handmade, sustainable, personalised toiletry bags.', did:['Shop and visual identity design.','Product catalogue and cart with WooCommerce.','Best-sellers and new-arrivals sections.','SEO work: optimised titles, meta descriptions, copy and images.']}
     }
   },
   {
     id:'fashion', cat:'webs',
     media:{type:'video', src:'assets/video/fashion.mp4', poster:'assets/img/poster-fashion.jpg'},
     gallery:['assets/img/fashion.webp'],
-    tags:['HTML','CSS','Disseny web'],
+    tags:['HTML','CSS','JavaScript','Disseny web'],
     links:[{label:'GitHub', href:GH+'/fashion_week_web'}],
     t:{
       ca:{title:'Fashion Week', one:'Web editorial sobre tendències i moments icònics de la Fashion Week.', desc:'Una web editorial sobre la Fashion Week: història, ciutats clau, tendències, marques i outfits, amb un disseny visual i cercador.', did:['Disseny i maquetació de la web.','Diverses seccions de contingut.','Cercador i navegació.']},
@@ -106,12 +106,12 @@ const PROJECTS = [
     id:'strawhop', cat:'jocs',
     media:{type:'video', src:'assets/video/strawhop.mp4', poster:'assets/img/poster-strawhop.jpg'},
     gallery:['assets/img/strawhop.webp'],
-    tags:['Videojoc 2D','Pixel art'],
+    tags:['Unity','C#','Videojoc 2D','Pixel art'],
     links:[],
     t:{
-      ca:{title:'StrawHop', one:'Videojoc de plataformes 2D amb estètica pixel art.', desc:'Un joc de plataformes 2D: salta, esquiva obstacles i recull maduixes per sumar punts.', did:['Mecàniques de salt i col·lisions.','Puntuació, vides i obstacles.','Menú i estètica pixel art.']},
-      es:{title:'StrawHop', one:'Videojuego de plataformas 2D con estética pixel art.', desc:'Un juego de plataformas 2D: salta, esquiva obstáculos y recoge fresas para sumar puntos.', did:['Mecánicas de salto y colisiones.','Puntuación, vidas y obstáculos.','Menú y estética pixel art.']},
-      en:{title:'StrawHop', one:'2D platformer game with pixel-art style.', desc:'A 2D platformer: jump, dodge obstacles and collect strawberries to score points.', did:['Jumping and collision mechanics.','Score, lives and obstacles.','Menu and pixel-art style.']}
+      ca:{title:'StrawHop', one:'Videojoc de plataformes 2D fet amb Unity, amb estètica pixel art.', desc:'Un joc de plataformes 2D fet amb Unity: salta, esquiva obstacles i recull maduixes per sumar punts.', did:['Mecàniques de salt i col·lisions.','Puntuació, vides i obstacles.','Menú i estètica pixel art.']},
+      es:{title:'StrawHop', one:'Videojuego de plataformas 2D hecho con Unity, con estética pixel art.', desc:'Un juego de plataformas 2D hecho con Unity: salta, esquiva obstáculos y recoge fresas para sumar puntos.', did:['Mecánicas de salto y colisiones.','Puntuación, vidas y obstáculos.','Menú y estética pixel art.']},
+      en:{title:'StrawHop', one:'2D platformer built in Unity with a pixel-art style.', desc:'A 2D platformer built in Unity: jump, dodge obstacles and collect strawberries to score points.', did:['Jumping and collision mechanics.','Score, lives and obstacles.','Menu and pixel-art style.']}
     }
   },
   {
@@ -239,7 +239,7 @@ function render(){
   $$('[data-i18n]').forEach(n => n.textContent = T(n.dataset.i18n));
   $$('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
   $('#featured').replaceChildren(...PROJECTS.filter(p => p.featured).map(p => card(p, true)));
-  $('#grid').replaceChildren(...PROJECTS.filter(p => !p.featured).map(p => card(p, false)));
+  $('#grid').replaceChildren(...PROJECTS.map(p => { const c = card(p, false); if (p.featured) c.dataset.feat = '1'; return c; }));
   $('#filters').replaceChildren(...Object.keys(CATS).map(k => { const b = el('button', null, CATS[k][lang]); b.type='button'; b.setAttribute('aria-pressed', String(k===filter)); b.onclick = () => { filter = k; applyFilter(); }; b.dataset.k = k; return b; }));
   applyFilter();
   $('#skills').replaceChildren(...SKILLS.map(s => { const d = el('div','sk reveal'); const h = el('h4', null, s.t[lang]); const t = el('div','tags'); s.items.forEach(i => t.append(el('span','tag',i))); d.append(h,t); return d; }));
@@ -250,7 +250,7 @@ function render(){
 }
 function applyFilter(){
   $$('#filters button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.k === filter)));
-  $$('#grid .gcard').forEach(c => c.hidden = !(filter === 'all' || c.dataset.cat === filter));
+  $$('#grid .gcard').forEach(c => c.hidden = filter === 'all' ? !!c.dataset.feat : c.dataset.cat !== filter);
 }
 
 /* modal */
