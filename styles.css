@@ -20,7 +20,8 @@ a{color:inherit}
 .glow{position:fixed;inset:0;pointer-events:none;z-index:0;background:
   radial-gradient(900px 520px at 78% -8%,rgba(79,134,255,.16),transparent 65%),
   radial-gradient(520px 520px at var(--mx,-20%) var(--my,-20%),rgba(79,134,255,.06),transparent 70%)}
-main,.nav,.foot{position:relative;z-index:2}
+main,.foot{position:relative;z-index:2}
+.nav{z-index:50}
 
 /* nav */
 .nav{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;gap:16px;
