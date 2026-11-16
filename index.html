@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Neus Filbà | Portfoli de desenvolupadora web, apps i IA aplicada</title>
+<meta name="description" content="Portfoli de Neus Filbà, estudiant de Multimèdia a la Universitat de Vic. Desenvolupament web, apps mòbils, videojocs i solucions amb intel·ligència artificial (RAG i LLM). Pregunta al xat amb IA pels meus projectes, la meva experiència en dades i la disponibilitat per fer pràctiques el 2027.">
+<meta name="keywords" content="Neus Filbà, portfoli, desenvolupadora web, apps mòbils, intel·ligència artificial, RAG, LLM, React, Laravel, Python, Multimèdia, UVic, pràctiques">
+<meta name="author" content="Neus Filbà Gallego">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://neusfilba.com/">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Neus Filbà">
+<meta property="og:locale" content="ca_ES">
+<meta property="og:url" content="https://neusfilba.com/">
+<meta property="og:title" content="Neus Filbà | Portfoli de desenvolupadora web, apps i IA aplicada">
+<meta property="og:description" content="Desenvolupament web, apps mòbils i solucions amb IA. Pregunta al xat amb IA pels meus projectes i experiència.">
+<meta property="og:image" content="https://neusfilba.com/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Neus Filbà, portfoli">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Neus Filbà | Portfoli de desenvolupadora web, apps i IA aplicada">
+<meta name="twitter:description" content="Desenvolupament web, apps mòbils i solucions amb IA. Pregunta al xat amb IA pels meus projectes i experiència.">
+<meta name="twitter:image" content="https://neusfilba.com/assets/img/og.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Neus Filbà Gallego","url":"https://neusfilba.com/","image":"https://neusfilba.com/assets/img/neus.webp","jobTitle":"Desenvolupadora web, apps i IA aplicada","email":"mailto:neus.filba@uvic.cat","alumniOf":{"@type":"CollegeOrUniversity","name":"Universitat de Vic – Universitat Central de Catalunya"},"address":{"@type":"PostalAddress","addressRegion":"Barcelona","addressCountry":"ES"},"knowsAbout":["Desenvolupament web","Apps mòbils","Intel·ligència artificial","RAG","Python","SQL","React","Laravel"],"sameAs":["https://www.linkedin.com/in/neus-filba-gallego","https://github.com/Yian2"]}
+</script>
+<meta name="theme-color" content="#0b0b0d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+
+<header class="nav" id="top">
+<a class="logo" href="#top" aria-label="Inici">Neus Filbà</a>
+<nav class="links" aria-label="Seccions">
+<a href="#projectes" data-i18n="nav.projects">Projectes</a>
+<a href="#sobre" data-i18n="nav.about">Sobre mi</a>
+<a href="#contacte" data-i18n="nav.contact">Contacte</a>
+</nav>
+<div class="nav-right">
+<div class="lang" role="group" aria-label="Idioma">
+<button type="button" data-lang="ca" aria-pressed="true">CA</button>
+<button type="button" data-lang="es" aria-pressed="false">ES</button>
+<button type="button" data-lang="en" aria-pressed="false">EN</button>
+</div>
+<a class="btn btn-small" href="assets/NeusFilba_CV.pdf" download data-i18n="nav.cv">CV</a>
+</div>
+</header>
+
+<main>
+<section class="hero" itemscope itemtype="https://schema.org/Person">
+<div class="hero-intro">
+<h1><span data-i18n="hero.hello">Hola, sóc la</span> <em class="name" itemprop="name">Neus</em></h1>
+<meta itemprop="jobTitle" content="Desenvolupadora web, apps i IA aplicada">
+<meta itemprop="url" content="https://neusfilba.com/">
+<p class="lede" data-i18n="hero.lede2" itemprop="description">Desenvolupo webs, apps i solucions amb IA. En lloc de llegir un currículum, pregunta'm el que vulguis.</p>
+</div>
+
+<div class="chat" id="chat">
+<div class="chat-head">
+<img class="avatar" src="assets/img/neus.webp" alt="Foto de Neus Filbà" itemprop="image" width="44" height="44">
+<div class="who"><b>Neus</b><span><i class="online"></i><span data-i18n="chat.status">Assistent amb IA</span></span></div>
+<a class="btn btn-ghost btn-small chat-cv" href="assets/NeusFilba_CV.pdf" download data-i18n="nav.cv">CV</a>
+</div>
+<div class="chat-log" id="chat-log" aria-live="polite"><div class="msg bot"><span>Hola! Sóc la Neus. Bé, una versió amb IA de mi. Pregunta'm pels meus projectes, les tecnologies que faig servir o la meva experiència.</span></div></div>
+<div class="chips" id="chips"></div>
+<form class="chat-form" id="chat-form" autocomplete="off">
+<label for="chat-input" class="sr" data-i18n="chat.label">Escriu una pregunta</label>
+<input id="chat-input" name="q" maxlength="400" data-i18n-ph="chat.ph" placeholder="Pregunta'm sobre els meus projectes, estudis o experiència...">
+<button class="send" type="submit" aria-label="Enviar">→</button>
+</form>
+</div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+<div class="track" id="track"></div>
+</div>
+
+<section class="section" id="projectes">
+<div class="sec-head">
+<p class="eyebrow" data-i18n="proj.eyebrow">Projectes destacats</p>
+<h2 data-i18n="proj.title">Coses que he construït</h2>
+</div>
+<div class="featured" id="featured"><article class="fcard"><div class="fbody"><span class="cat">IA i dades</span><h3>Bolets del Montseny</h3><p>Xat amb IA (RAG) que respon sobre els bolets del Montseny i ressalta al mapa on viuen.</p><div class="tags"><span class="tag">Python</span><span class="tag">RAG</span><span class="tag">LLM (Groq)</span><span class="tag">Embeddings</span><span class="tag">Streamlit</span></div></div></article><article class="fcard"><div class="fbody"><span class="cat">Apps</span><h3>Mis Gastos</h3><p>App mòbil per controlar ingressos, despeses i hores treballades, amb gràfics.</p><div class="tags"><span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">TypeScript</span><span class="tag">AsyncStorage</span></div></div></article><article class="fcard"><div class="fbody"><span class="cat">Webs</span><h3>La Efímera</h3><p>Web i sistema de comandes take away per a una pizzeria real.</p><div class="tags"><span class="tag">PHP</span><span class="tag">Laravel</span><span class="tag">MySQL</span><span class="tag">Multiidioma</span></div></div></article><article class="fcard"><div class="fbody"><span class="cat">Webs</span><h3>NF</h3><p>Botiga online de neceseres personalitzats fets a mà.</p><div class="tags"><span class="tag">WordPress</span><span class="tag">WooCommerce</span><span class="tag">E-commerce</span></div></div></article></div>
+
+<div class="sec-head more-head">
+<h3 data-i18n="proj.more">Més projectes</h3>
+<div class="filters" id="filters" role="group" aria-label="Filtre"></div>
+</div>
+<div class="grid" id="grid"><article class="gcard"><div class="fbody"><span class="cat">Webs</span><h3>Fashion Week</h3><p>Web editorial sobre tendències i moments icònics de la Fashion Week.</p><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Disseny web</span></div></div></article><article class="gcard"><div class="fbody"><span class="cat">Apps</span><h3>MakeupCatalog</h3><p>App mòbil per catalogar productes de maquillatge per categories.</p><div class="tags"><span class="tag">App mòbil</span><span class="tag">Login</span><span class="tag">Multiidioma</span></div></div></article><article class="gcard"><div class="fbody"><span class="cat">Jocs</span><h3>StrawHop</h3><p>Videojoc de plataformes 2D amb estètica pixel art.</p><div class="tags"><span class="tag">Videojoc 2D</span><span class="tag">Pixel art</span></div></div></article><article class="gcard"><div class="fbody"><span class="cat">Jocs</span><h3>Escacs</h3><p>Joc d'escacs d'escriptori fet amb C++ i Qt.</p><div class="tags"><span class="tag">C++</span><span class="tag">Qt</span></div></div></article><article class="gcard"><div class="fbody"><span class="cat">Jocs</span><h3>Vaixells 3D</h3><p>Videojoc multijugador en 3D fet amb Unity.</p><div class="tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Multijugador</span></div></div></article></div>
+</section>
+
+<section class="section about" id="sobre">
+<div class="sec-head">
+<p class="eyebrow" data-i18n="about.eyebrow">Sobre mi</p>
+<h2 data-i18n="about.title">Tecnologia amb sentit pràctic</h2>
+</div>
+<div class="about-grid">
+<div class="about-text">
+<p data-i18n="about.p1">Estic acabant el Grau en Multimèdia. Aplicacions i Videojocs a la Universitat de Vic. Des d'octubre de 2026 faig pràctiques de tractament de dades, on treballo amb PostgreSQL, Firebase i Docker. M'interessa sobretot la IA aplicada: fer servir models de llenguatge i dades per resoldre problemes reals d'empresa.</p>
+<p data-i18n="about.p2">Des del 2022 soc cap de sala d'una pizzeria mentre estudio: coordino un equip, formo companys nous i resolc problemes sota pressió. Això també és el que porto a cada projecte.</p>
+<p data-i18n="about.p3">Busco pràctiques a partir de febrer de 2027 en un equip on pugui aplicar la IA i les dades a problemes reals: automatitzar processos, crear assistents que responguin amb la informació de l'empresa o construir eines internes que facin la feina més fàcil. M'agrada entendre primer com treballa la gent i després proposar la solució tècnica.</p>
+<div class="timeline">
+<div class="tl"><span class="tl-date" data-i18n="tl.1d">Oct 2026 – ara</span><div><b data-i18n="tl.1t">Pràctiques en tractament de dades</b><span data-i18n="tl.1s">Universitat de Vic · PostgreSQL, Firebase, Docker</span></div></div>
+<div class="tl"><span class="tl-date" data-i18n="tl.3d">2022 – ara</span><div><b data-i18n="tl.3t">Cap de sala</b><span>Pizzeria La Efímera</span></div></div>
+<div class="tl"><span class="tl-date">2023 – 2027</span><div><b data-i18n="tl.4t">Grau en Multimèdia</b><span>UVic-UCC</span></div></div>
+</div>
+</div>
+<div class="skills" id="skills"><div class="sk"><h4>IA i dades</h4><div class="tags"><span class="tag">Python</span><span class="tag">RAG / LLM</span><span class="tag">SQL</span><span class="tag">PostgreSQL</span><span class="tag">Firebase</span><span class="tag">Power BI</span></div></div><div class="sk"><h4>Web</h4><div class="tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">PHP / Laravel</span><span class="tag">HTML / CSS</span><span class="tag">WordPress</span></div></div><div class="sk"><h4>Apps i IoT</h4><div class="tags"><span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">Arduino</span><span class="tag">Unity / C#</span><span class="tag">Java</span><span class="tag">C / C++</span></div></div><div class="sk"><h4>Eines</h4><div class="tags"><span class="tag">Git / GitHub</span><span class="tag">Docker</span><span class="tag">Figma</span><span class="tag">Three.js</span><span class="tag">HubSpot</span><span class="tag">Jira</span></div></div></div>
+</div>
+</section>
+
+<section class="section contact" id="contacte">
+<p class="eyebrow" data-i18n="contact.eyebrow">Contacte</p>
+<h2 class="big" data-i18n="contact.title">Parlem?</h2>
+<p class="lede" data-i18n="contact.lede">Busco pràctiques a partir de febrer de 2027 en desenvolupament, dades o IA aplicada.</p>
+<div class="contact-row">
+<button type="button" class="btn" id="copy"><span id="email">neus.filba@uvic.cat</span> <span class="copy-lbl" data-i18n="contact.copy">Copiar</span></button>
+<a class="btn btn-ghost" href="https://www.linkedin.com/in/neus-filba-gallego" target="_blank" rel="noopener">LinkedIn ↗</a>
+<a class="btn btn-ghost" href="https://github.com/Yian2" target="_blank" rel="noopener">GitHub ↗</a>
+<a class="btn btn-ghost" href="assets/NeusFilba_CV.pdf" download data-i18n="contact.cv">Descarregar CV</a>
+</div>
+</section>
+</main>
+
+<footer class="foot">
+<span>© 2026 Neus Filbà Gallego</span>
+<a href="mailto:neus.filba@uvic.cat" class="foot-3d">neus.filba@uvic.cat</a>
+</footer>
+
+<dialog class="modal" id="modal" aria-labelledby="m-title">
+<button class="close" type="button" id="m-close" aria-label="Tancar">✕</button>
+<div class="m-media" id="m-media"></div>
+<div class="m-body">
+<p class="eyebrow" id="m-cat"></p>
+<h3 id="m-title"></h3>
+<p id="m-desc"></p>
+<h4 data-i18n="modal.did">Què he fet</h4>
+<ul id="m-did"></ul>
+<div class="tags" id="m-tags"></div>
+<div class="m-links" id="m-links"></div>
+</div>
+</dialog>
+
+<script src="app.js"></script>
+<script src="chat.js"></script>
+</body>
+</html>
