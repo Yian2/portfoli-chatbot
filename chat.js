@@ -177,9 +177,9 @@ const REPEAT = {
   en:'That\'s what I can tell you from here. If you\'d like more detail, write to me and we can talk it through. [[contacte]]'
 };
 const FALLBACK = {
-  ca:'D\'això no en tinc informació aquí. Prova a preguntar-me pels meus projectes, una tecnologia concreta (React, SQL, Unity...), la meva experiència o la disponibilitat per fer pràctiques.',
-  es:'De eso no tengo información aquí. Prueba a preguntarme por mis proyectos, una tecnología concreta (React, SQL, Unity...), mi experiencia o mi disponibilidad para prácticas.',
-  en:'I don\'t have information about that here. Try asking about my projects, a specific technology (React, SQL, Unity...), my experience or my availability for an internship.'
+  ca:'D\'això no et sé dir res: aquí només responc sobre mi, els meus projectes i la meva experiència. Per a qualsevol altra cosa, escriu-me directament i en parlem. També pots triar una de les preguntes de sota. [[contacte]]',
+  es:'De eso no te sé decir nada: aquí solo respondo sobre mí, mis proyectos y mi experiencia. Para cualquier otra cosa, escríbeme directamente y lo hablamos. También puedes elegir una de las preguntas de abajo. [[contacte]]',
+  en:'I can\'t help with that: here I only answer questions about me, my projects and my experience. For anything else, just write to me directly. You can also pick one of the questions below. [[contacte]]'
 };
 function localAnswer(q){
   const t = strip(q); let key = null, text = null;
