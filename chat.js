@@ -207,12 +207,15 @@ function localAnswer(q){
   lastKey = key; return text;
 }
 
-/* ---------- connexió amb l'LLM (Netlify Function) ---------- */
+/* ---------- connexió amb l'LLM ----------
+   CHAT_API: URL del Cloudflare Worker (cloudflare/worker.js). Buida = només respostes locals. */
+const CHAT_API = '';
 async function remoteAnswer(){
+  if (!CHAT_API) return null;
   if (location.protocol === 'file:') return null;
   const ctrl = new AbortController(); const tm = setTimeout(() => ctrl.abort(), 15000);
   try{
-    const r = await fetch('/api/chat', {method:'POST', headers:{'Content-Type':'application/json'}, signal:ctrl.signal,
+    const r = await fetch(CHAT_API, {method:'POST', headers:{'Content-Type':'application/json'}, signal:ctrl.signal,
       body: JSON.stringify({lang, messages: history.slice(-10)})});
     if (!r.ok) return null;
     const d = await r.json(); return (d && typeof d.reply === 'string' && d.reply.trim()) ? d.reply.trim() : null;
