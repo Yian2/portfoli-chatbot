@@ -31,6 +31,48 @@ const PROJECTS = [
     }
   },
   {
+    id:'typingocto-seo', featured:true, cat:'ia',
+    media:{type:'image', src:'assets/img/typingocto-seo.webp'},
+    gallery:['assets/img/typingocto-seo.webp','assets/img/typingocto-seo-an.webp','assets/img/typingocto-seo-auto.webp','assets/img/typingocto-seo-nou.webp'],
+    tags:['React','TypeScript','Firebase','Gemini API','GitHub Actions','Search Console API','GA4 Data API','Node.js','Firestore Rules','SEO tècnic'],
+    links:[{label:'typingocto.com/blog', href:'https://typingocto.com/blog/'}],
+    t:{
+      ca:{title:'TypingOcto SEO Intelligence', one:'Mini SaaS que fa créixer el blog de typingocto.com amb dades reals de Google, esborranys amb IA i publicació automàtica amb aprovació humana.',
+        desc:'A part de crear typingocto.com (una web gratuïta per aprendre mecanografia, amb una mascota que és un pop), vaig construir un panell privat que automatitza tot el cicle de contingut SEO: llegeix les dades reals de Google Search Console i Google Analytics 4, detecta oportunitats, genera esborranys d\'articles amb IA (Gemini), en revisa la qualitat i els publica al blog quan arriba la data programada, però només si jo els he aprovat. Funciona tot sol encara que tingui l\'ordinador apagat i amb un cost de 0 €/mes.',
+        did:['Panell privat amb React, TypeScript i Vite, allotjat a Firebase Hosting, amb login de Google i accés només per a administradors (regles de seguretat de Firestore provades amb tests a l\'emulador).',
+          'Integració amb les APIs oficials de Google Search Console, GA4 Data API i URL Inspection: clics, impressions, CTR, posició, indexació, canals, trànsit de TikTok i quins articles porten usuaris que realment fan servir l\'app.',
+          'Motor en Node.js que s\'executa a GitHub Actions cada 30 minuts (despertat per un cron extern), amb bloqueig contra execucions duplicades, reintents limitats, registre de costos i historial.',
+          'Generació d\'articles amb Gemini amb una sortida JSON estructurada i un prompt que prohibeix inventar estadístiques, estudis o funcionalitats, a més d\'un model alternatiu automàtic si el principal està saturat.',
+          'Control de qualitat automàtic: contingut duplicat, afirmacions sense font, enllaços trencats, crides a l\'acció cap a rutes reals, llicències d\'imatges i detecció d\'injecció de prompts.',
+          'Aprovació humana lligada a una versió concreta de l\'article (hash SHA-256): si s\'edita després d\'aprovar-lo, no es publica.',
+          'Publicació via l\'API de GitHub → build estàtic → revisió de SEO tècnic → desplegament a GitHub Pages, i l\'article només es marca com a publicat quan la URL ja està en línia.',
+          'Calendari editorial configurable, recordatoris per correu, editor visual amb autoguardat i versions, gestor del blog (crear, editar, eliminar) i una biblioteca d\'il·lustracions de la mascota generades per codi.',
+          'Puntuació d\'oportunitats SEO explicable i investigació de paraules clau que separa les dades reals dels suggeriments de la IA.']},
+      es:{title:'TypingOcto SEO Intelligence', one:'Mini SaaS que hace crecer el blog de typingocto.com con datos reales de Google, borradores con IA y publicación automática con aprobación humana.',
+        desc:'Además de crear typingocto.com (una web gratuita para aprender mecanografía, con un pulpo como mascota), construí un panel privado que automatiza todo el ciclo de contenido SEO: lee los datos reales de Google Search Console y Google Analytics 4, detecta oportunidades, genera borradores de artículos con IA (Gemini), revisa su calidad y los publica en el blog cuando llega la fecha programada, pero solo si yo los he aprobado. Funciona solo aunque tenga el ordenador apagado y con un coste de 0 €/mes.',
+        did:['Panel privado con React, TypeScript y Vite, alojado en Firebase Hosting, con login de Google y acceso solo para administradores (reglas de seguridad de Firestore probadas con tests en el emulador).',
+          'Integración con las APIs oficiales de Google Search Console, GA4 Data API y URL Inspection: clics, impresiones, CTR, posición, indexación, canales, tráfico de TikTok y qué artículos traen usuarios que realmente usan la app.',
+          'Motor en Node.js que se ejecuta en GitHub Actions cada 30 minutos (despertado por un cron externo), con bloqueo contra ejecuciones duplicadas, reintentos limitados, registro de costes e historial.',
+          'Generación de artículos con Gemini con una salida JSON estructurada y un prompt que prohíbe inventar estadísticas, estudios o funcionalidades, además de un modelo alternativo automático si el principal está saturado.',
+          'Control de calidad automático: contenido duplicado, afirmaciones sin fuente, enlaces rotos, llamadas a la acción hacia rutas reales, licencias de imágenes y detección de inyección de prompts.',
+          'Aprobación humana ligada a una versión concreta del artículo (hash SHA-256): si se edita después de aprobarlo, no se publica.',
+          'Publicación vía la API de GitHub → build estático → revisión de SEO técnico → despliegue en GitHub Pages, y el artículo solo se marca como publicado cuando la URL ya está en línea.',
+          'Calendario editorial configurable, recordatorios por correo, editor visual con autoguardado y versiones, gestor del blog (crear, editar, eliminar) y una biblioteca de ilustraciones de la mascota generadas por código.',
+          'Puntuación de oportunidades SEO explicable e investigación de palabras clave que separa los datos reales de las sugerencias de la IA.']},
+      en:{title:'TypingOcto SEO Intelligence', one:'Mini SaaS that grows the typingocto.com blog with real Google data, AI drafts and automated publishing with human approval.',
+        desc:'Besides building typingocto.com (a free typing tutor with an octopus mascot), I built a private dashboard that automates the whole SEO content cycle: it reads real Google Search Console and Google Analytics 4 data, finds opportunities, drafts articles with AI (Gemini), checks their quality and publishes them to the blog on the scheduled date, but only if I have approved them. It runs on its own with my computer switched off, at €0/month.',
+        did:['Private dashboard with React, TypeScript and Vite on Firebase Hosting, with Google sign-in and admin-only access (Firestore security rules tested on the emulator).',
+          'Integration with the official Google Search Console, GA4 Data and URL Inspection APIs: clicks, impressions, CTR, position, indexing, channels, TikTok traffic and which articles bring users who actually use the app.',
+          'Node.js engine running on GitHub Actions every 30 minutes (woken up by an external cron), with a lock against duplicate runs, limited retries, cost tracking and run history.',
+          'Article generation with Gemini using structured JSON output and a prompt that forbids made-up statistics, studies or features, plus an automatic fallback model when the main one is overloaded.',
+          'Automated quality checks: duplicate content, unsourced claims, broken links, calls to action pointing to real routes, image licences and prompt-injection detection.',
+          'Human approval bound to one exact version of the article (SHA-256 hash): if it is edited after approval, it is not published.',
+          'Publishing through the GitHub API → static build → technical SEO checks → GitHub Pages deploy, and the article is only marked as published once its URL is live.',
+          'Configurable editorial calendar, email reminders, visual editor with autosave and versions, blog manager (create, edit, delete) and a code-generated mascot illustration library.',
+          'Explainable SEO opportunity score and keyword research that keeps real data apart from AI suggestions.']}
+    }
+  },
+  {
     id:'bolets', featured:true, cat:'ia',
     media:{type:'image', src:'assets/img/bolets.webp'},
     gallery:['assets/img/bolets.webp'],
@@ -159,10 +201,10 @@ const PROJECTS = [
 ];
 
 const SKILLS = [
-  {t:{ca:'IA i dades',es:'IA y datos',en:'AI & data'}, items:['Python','RAG / LLM','SQL','PostgreSQL','Firebase','Power BI']},
+  {t:{ca:'IA i dades',es:'IA y datos',en:'AI & data'}, items:['Python','RAG / LLM','Gemini API','SQL','PostgreSQL','Firebase','Google Analytics 4','Search Console','Power BI']},
   {t:{ca:'Web',es:'Web',en:'Web'}, items:['React','TypeScript','JavaScript','PHP / Laravel','HTML / CSS','WordPress']},
   {t:{ca:'Apps i IoT',es:'Apps e IoT',en:'Apps & IoT'}, items:['React Native','Expo','Arduino','Unity / C#','Java','C / C++']},
-  {t:{ca:'Eines',es:'Herramientas',en:'Tools'}, items:['Git / GitHub','Docker','Figma','Three.js','HubSpot','Jira']}
+  {t:{ca:'Eines',es:'Herramientas',en:'Tools'}, items:['Git / GitHub','GitHub Actions','Docker','Figma','Three.js','HubSpot','Jira']}
 ];
 
 const CATS = {
@@ -261,7 +303,7 @@ function render(){
   $('#filters').replaceChildren(...Object.keys(CATS).map(k => { const b = el('button', null, CATS[k][lang]); b.type='button'; b.setAttribute('aria-pressed', String(k===filter)); b.onclick = () => { filter = k; applyFilter(); }; b.dataset.k = k; return b; }));
   applyFilter();
   $('#skills').replaceChildren(...SKILLS.map(s => { const d = el('div','sk reveal'); const h = el('h4', null, s.t[lang]); const t = el('div','tags'); s.items.forEach(i => t.append(el('span','tag',i))); d.append(h,t); return d; }));
-  $('#track').replaceChildren(...[0,1].map(() => { const s = el('span'); ['Python','React','TypeScript','IA · RAG','SQL','PostgreSQL','Firebase','Laravel','React Native','Docker','Arduino','IoT','Three.js','Figma'].forEach(w => { const x = el('span',null,w); s.append(x); }); return s; }));
+  $('#track').replaceChildren(...[0,1].map(() => { const s = el('span'); ['Python','React','TypeScript','IA · RAG','SQL','PostgreSQL','Firebase','Laravel','React Native','Docker','GitHub Actions','SEO','Arduino','IoT','Three.js','Figma'].forEach(w => { const x = el('span',null,w); s.append(x); }); return s; }));
   observe();
   $$('[data-i18n-ph]').forEach(n => n.placeholder = T(n.dataset.i18nPh));
   if (window.onLangChange) window.onLangChange();
